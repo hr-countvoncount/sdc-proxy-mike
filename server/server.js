@@ -10,6 +10,15 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "../public")));
 
+app.get("/loaderio-00660a6577182fa90bf2cc75351199b9", (req, res) => {
+  res.sendFile(
+    path.join(
+      __dirname,
+      "./public/loaderio-00660a6577182fa90bf2cc75351199b9.txt"
+    )
+  );
+});
+
 app.get("/:id", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
 });
